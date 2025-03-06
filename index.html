@@ -5,6 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Responsive styling for laptop screens */
+        .chart-section {
+            text-align: center;
+            padding: 20px;
+        }
+
+        label {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        select {
+            font-size: 16px;
+            padding: 5px;
+        }
+
+        .chart-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            max-width: 900px; /* Adjust for laptop resolution */
+            margin: 20px auto;
+        }
+
+        canvas {
+            width: 100% !important;
+            height: auto !important;
+        }
+
+        /* Media query for laptop screens */
+        @media (max-width: 1440px) {
+            .chart-container {
+                max-width: 800px;
+            }
+        }
+        
+        /* Media query for smaller screens */
+        @media (max-width: 1024px) {
+            .chart-container {
+                max-width: 700px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Chart Section -->
@@ -81,10 +126,27 @@
                 },
                 options: {
                     responsive: true,
+                    maintainAspectRatio: false,
                     plugins: {
                         legend: {
                             display: true,
                             position: 'top'
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: {
+                                font: {
+                                    size: 14
+                                }
+                            }
+                        },
+                        y: {
+                            ticks: {
+                                font: {
+                                    size: 14
+                                }
+                            }
                         }
                     }
                 }
