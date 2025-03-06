@@ -14,7 +14,7 @@
         <select id="datasetSelector">
             <option value="chartData1">A3SA</option>
             <option value="chartData2">HD+ TVAPP</option>
-            <option value="chartData2">HD+ IP TVAPP</option>
+            <option value="chartData3">HD+ IP TVAPP</option>
         </select>
         <div class="chart-container">
             <canvas id="lineChart"></canvas>
@@ -51,6 +51,13 @@
             WARN: [1, 2, 3000]
         };
 
+        // Dictionary to map dropdown values to JSON data
+        const datasets = {
+            chartData1,
+            chartData2,
+            chartData3
+        };
+
         let selectedData = chartData1;
         const ctxLine = document.getElementById('lineChart').getContext('2d');
         let chart;
@@ -85,7 +92,7 @@
         }
 
         document.getElementById('datasetSelector').addEventListener('change', function () {
-            selectedData = this.value === "chartData1" ? chartData1 : chartData2;
+            selectedData = datasets[this.value];
             createChart(selectedData);
         });
 
