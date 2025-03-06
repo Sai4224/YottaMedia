@@ -12,8 +12,8 @@
         <h2>Data Visualization</h2>
         <label for="datasetSelector">Select Dataset:</label>
         <select id="datasetSelector">
-            <option value="chartData1">Version Data</option>
-            <option value="chartData2">Production Data</option>
+            <option value="chartData1">A3SA</option>
+            <option value="chartData2">HD+ TVAPP</option>
         </select>
         <div class="chart-container">
             <canvas id="lineChart"></canvas>
@@ -27,14 +27,23 @@
             labels: ["2.4.0", "2.4.1", "2.4.6"],
             ERROR: [32000, 33000, 31000], 
             METRIC: [45000, 46000, 47000], 
-            FATAL: [8000, 9, 7],
+            FATAL: [10000, 9, 7],
             INFO: [4, 5000, 6],
             WARN: [1, 2, 3000]
         };
 
         const chartData2 = {
             labels: ["2.4.2-prod.196", "2.5.0-prod.205", "3.0.7-prod.33_(1.0.1-prod.275)"],
-            ERROR: [32000, 33000, 31000], 
+            ERROR: [1500, 19000, 1000], 
+            METRIC: [4000, 46000, 47000], 
+            FATAL: [8000, 9, 7],
+            INFO: [4, 5000, 6],
+            WARN: [1, 2, 3000]
+        };
+
+        const chartData3 = {
+            labels: ["3.0.7-prod.13_(1.0.0-prod.10)", "3.0.13-prod.30_(1.0.1-prod.27)"],
+            ERROR: [20000, 330000, 310000], 
             METRIC: [45000, 46000, 47000], 
             FATAL: [8000, 9, 7],
             INFO: [4, 5000, 6],
